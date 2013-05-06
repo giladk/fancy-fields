@@ -1,0 +1,33 @@
+{
+    "name": "fancy-fields",
+    "title": "Fancy fields",
+    "description": "Jquery plugin for custom form elements",
+    "keywords": [
+        "forms",
+        "inputs",
+        "ui",
+		"form",
+		"dropdown",
+		"selectbox"
+    ],
+    "version": "1.2.0",
+    "author": {
+        "name": "Gilad Korati , Matan Gottlieb",
+        "url": "http://vadimfedorov.ru"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "bugs": "https://github.com/giladk/fancy-fields/issues",
+    "homepage": "http://www.jqfancyfields.com/",
+    "docs": "http://www.jqfancyfields.com/examples-docs/",
+    "demo": "http://www.jqfancyfields.com/",
+    "download": "https://github.com/giladk/fancy-fields/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.7.2",
+		"jquery-ui": ">= 1.9 with Draggable component"
+    }
+}
