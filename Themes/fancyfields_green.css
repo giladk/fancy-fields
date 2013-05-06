@@ -1,0 +1,295 @@
+
+* {margin: 0; padding: 0;}
+
+
+.ffTextBoxWrapper,
+.ffPasswordWrapper,
+.ffCheckboxWrapper,
+.ffRadioWrapper,
+.ffTextAreaWrapper,
+.ffSubmitWrapper,
+.ffResetWrapper,
+.ffButtonWrapper {display: inline-block; zoom: 1; *display: inline; margin: 5px 0;}
+
+.ffSelectWrapper{display: inline-block; zoom: 1; margin: 5px 0;}
+
+
+.ffTextBoxLeft, .ffTextBoxRight,
+.ffPasswordLeft, .ffPasswordRight,
+.ffCheckbox, .ffRadio, .ffSelectButton, .ffSelectButton span,
+.ffSelectMenuWrapper div.ffSelectMenuTop,
+.ffSelectMenuWrapper div.ffSelectMenuBottom,
+.ffSelectMenuWrapper > div > span,
+.ffTextAreaTop, .ffTextAreaTop span,
+.ffTextAreaBottom, .ffTextAreaBottom span,
+.ffSubmitWrapper a, .ffSubmitWrapper a span,
+.ffResetWrapper a, .ffResetWrapper a span,
+.ffButtonWrapper a, .ffButtonWrapper a span {
+	background-image: url(images/sprite_green.png);
+	background-repeat: no-repeat;
+}
+
+
+/* text box */
+.ffTextBoxRight, .ffPasswordRight {
+	background-position: right -256px;
+	padding-right:5px;
+}
+.ffTextBoxLeft, .ffPasswordLeft {
+	background-position: 0 0;
+	padding: 0 5px 0 10px;
+}
+.ffTextBoxLeft input, .ffPasswordLeft input {
+		border: 0;
+		height: 28px;
+		background-color: transparent;
+		margin-top: 6px\9;
+		height: 22px\9;
+}
+
+
+.ffTextBoxRight:hover,
+.ffPasswordRight:hover {background-position: right -288px;}
+.ffTextBoxLeft:hover,
+.ffPasswordLeft:hover {background-position: 0 -32px;}
+
+
+.focus .ffTextBoxRight,
+.focus .ffPasswordRight {background-position: right -320px;}
+.focus .ffTextBoxLeft,
+.focus .ffPasswordLeft {background-position: 0 -64px;}
+
+.ffTextBoxWrapper.disabled .ffTextBoxRight,
+.ffPasswordWrapper.disabled .ffPasswordRight {background-position: right -352px;}
+.ffTextBoxWrapper.disabled .ffTextBoxLeft,
+.ffPasswordWrapper.disabled .ffPasswordLeft {background-position: 0 -96px; color: #999;}
+
+
+/* checkbox */
+
+.ffCheckboxWrapper a {
+	text-decoration: none;
+	color: #6F6F6F;
+	position: relative;
+	top: 1px;
+	font-size: 14px;
+	padding-left: 5px;
+	margin-right: 10px;
+}
+.ffCheckbox {
+	width: 21px;
+	height: 21px;
+	float: left;
+	background-position: 0 -288px;
+	cursor: pointer;
+}
+.ffCheckboxWrapper:hover a, .ffCeckboxWrapper.focus a {color: #4e4e4e;}
+.ffCheckboxWrapper:hover .ffCheckbox, .ffCeckboxWrapper.focus .ffCheckbox{background-position: -30px -288px;}
+.ffCheckboxWrapper.on .ffCheckbox {background-position: -60px -288px;}
+.ffCheckboxWrapper.on:hover .ffCheckbox, .ffCeckboxWrapper.on.focus .ffCheckbox {background-position: -90px -288px;}
+.ffCheckboxWrapper.disabled .ffCheckbox {background-position: -120px -288px;}
+.ffCheckboxWrapper.on.disabled .ffCheckbox {background-position: -150px -288px;}
+.ffCheckboxWrapper.disabled a, .ffCeckboxWrapper.disabled:hover a, .ffCeckboxWrapper.disabled.focus a {color: #999;}
+
+
+/* radio */
+.ffRadioWrapper a {
+	text-decoration: none;
+	color: #555;
+	position: relative;
+	top: 1px;
+	font-size: 14px;
+	padding-left: 5px;
+	margin-right: 10px;
+}
+.ffRadio {
+	width: 18px;
+	height: 18px;
+	float: left;
+	background-position: -180px -288px;
+	cursor: pointer;
+}
+.ffRadioWrapper:hover a, .ffRadioWrapper.focus a {color: #4e4e4e;}
+.ffRadioWrapper:hover .ffRadio, .ffRadioWrapper.focus .ffRadio{background-position: -210px -288px;}
+.ffRadioWrapper.on .ffRadio {background-position: -240px -288px;}
+.ffRadioWrapper.on:hover .ffRadio, .ffRadioWrapper.on.focus .ffRadio {background-position: -270px -288px;}
+.ffRadioWrapper.disabled .ffRadio {background-position: -300px -288px;}
+.ffRadioWrapper.on.disabled .ffRadio {background-position: -330px -288px;}
+.ffRadioWrapper.disabled a, .ffRadioWrapper.disabled:hover a, .ffRadioWrapper.disabled.focus a {color: #999;}
+
+
+/* selectbox */
+.ffSelectWrapper {width:200px;*clear:both;}
+.ffSelect {position: relative;}
+
+.ffSelect > a {
+	background-position: right -128px;
+	display: block;
+	text-decoration: none;
+	outline: 0;
+	cursor: default;
+}
+.ffSelect > a > span {
+	display: block;
+	height: 28px;
+	margin-right: 40px;
+	padding-left: 10px;
+	background-position: 0 0;
+	overflow: hidden;
+	line-height: 28px;
+	font-size: 14px;
+	color: #555;
+	white-space: nowrap;
+	*white-space: normal;
+	text-overflow: ellipsis;
+}
+
+.ffSelect:hover > a, .ffSelectWrapper.focus .ffSelect > a {background-position: right -160px;}
+.ffSelect:hover > a > span, .ffSelectWrapper.focus .ffSelect > a > span {background-position: 0 -32px;}
+.ffSelectWrapper.active  .ffSelect> a {background-position: right -192px; z-index: 1005; position: relative;}
+.ffSelectWrapper.active  .ffSelect > a > span {background-position: 0 -64px;}
+.ffSelectWrapper.disabled .ffSelect > a {background-position: right -224px;}
+.ffSelectWrapper.disabled .ffSelect > a > span {background-position: 0 -96px; color: #999;}
+
+
+.ffSelectMenuWrapper {width: 100%;}
+
+
+.ffSelectMenuWrapper .ffSelectMenuMidBG ul{list-style-type:none;margin:0 0;padding:0;}
+.ffSelectMenuWrapper .ffSelectMenuMidBG li {padding: 5px; cursor: default; background: #fff;}
+.ffSelectMenuWrapper .ffSelectMenuMidBG li SPAN{font-size:14px;}
+.ffSelectMenuWrapper .ffSelectMenuMidBG li.disabled SPAN{color:#888;}
+.ffSelectMenuWrapper .ffSelectMenuMidBG li.on{background: #ccc;}
+
+
+.ffSelectMenuWrapper{}
+.ffSelectMenuTop {
+	height: 5px;	
+	background-position: 0 -394px;
+	
+}
+.ffSelectMenuTop span {
+	display: block;
+	height: 5px;
+	margin-left: 8px;
+	background: right -384px;
+}
+
+.ffSelectMenuBottom {
+	height: 5px;
+	background-position: 0 -414px;
+}
+.ffSelectMenuBottom span {
+	display: block;
+	height: 5px;
+	margin-left: 8px;
+	background-position: right -404px;
+}
+.ffSelectMenuMidBG {background:url(images/sides_green.png) repeat-y right 0;}
+.ffSelectMenuMid  {max-height: 200px; overflow: auto; background: url(images/sides_green.png) repeat-y 0 0; padding-left: 4px;margin-right:4px;}
+
+.scrollingBarWrapper{width:24px;height:200px;background:url(images/scrollingBarBg.png) no-repeat;right:3px!important;}
+.scrollingHandle {width:24px;padding-top:20px;background:url(images/scrollingHandleTop.png) no-repeat 0 0;}
+.scrollingHandleBottom{width:24px;background:url(images/scrollingHandleBottom.png) no-repeat 0px bottom}
+
+
+
+/* textarea */
+.ffTextAreaWrapper textarea {
+    border: 0;
+    margin: 10px 10px 10px 15px;
+    padding:0 ;
+    font-size: 14px;
+    color: #555;
+    background: none;
+    font-family: Arial;
+    resize: none;
+}
+
+
+.ffTextAreaTop {
+	height: 5px;
+	background-position: 0 -394px;
+}
+.ffTextAreaTop span {
+	display: block;
+	height: 5px;
+	margin-left: 8px;
+	background-position: right -384px;
+}
+
+.ffTextAreaMid {
+    background: transparent url(images/sides_green.png) repeat-y right 0;
+}
+.ffTextAreaMid .ffTextAreaLeft {
+    background: url(images/sides_green.png) repeat-y 0 0;
+    margin-right: 4px;
+}
+
+
+.ffTextAreaBottom {
+	height: 5px;
+	background-position: 0 -414px;
+}
+.ffTextAreaBottom span {
+	display: block;
+	height: 5px;
+	margin-left: 6px;
+	background-position: right -404px;
+}
+
+
+/* button */
+.ffButtonWrapper > a {
+	background-position: right -585px;
+	display: block;
+	text-decoration: none;
+	outline: 0;
+}
+.ffButtonWrapper > a > span {
+	display: block;
+	height: 36px;
+	padding-bottom: 2px;
+	line-height: 39px;
+	font-size: 15px;
+	background-position: 0 -424px;
+	text-align: center;
+	padding: 0 10px 0 15px;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+
+.ffButtonWrapper:hover > a {background-position: right -625px;}
+.ffButtonWrapper:hover > a > span {background-position: 0 -464px;}
+.ffButtonWrapper > a:active {background-position: right -665px; position: relative; }
+.ffButtonWrapper > a:active > span {background-position: 0 -504px;}
+.ffButtonWrapper.disabled > a {background-position: right -705px; position: static;}
+.ffButtonWrapper.disabled > a > span {background-position: 0 -544px;color: #c1c1c1;}
+
+input[type="text"], input[type="password"], textarea, select {outline: none;} /* remove webkit yellow border */
+
+select.mobileSelect{opacity:0;filter:alpha(opacity=0);position:absolute;top:0;display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
