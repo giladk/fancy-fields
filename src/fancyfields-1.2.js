@@ -578,7 +578,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                 $menuElementWrapper.css("top", $wrapElement.height());
                             }
 
-                            $dummyButton.css("height", $wrapElement.height());
+                            $dummyButton.css("height", $wrapElement.innerHeight());
 
                             // select button click
                             $dummyButton.click(function () {
