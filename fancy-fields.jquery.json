@@ -28,6 +28,7 @@
     "download": "https://github.com/giladk/fancy-fields/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7.2",
-		"jquery-ui": ">= 1.9 with Draggable component"
+	"jquery-ui":">= 1.9.0 with Draggable component"
     }
 }
+
