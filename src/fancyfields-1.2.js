@@ -726,7 +726,9 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         addFocusEvents($dummyButton, $wrapElement);
 						
                         $dummyButton.click(function () {
-                            $curObj.click();
+                            if (!$wrapElement.HasClass("disabled")){
+                                $curObj.click();
+                            }
                         });
                     }
 
