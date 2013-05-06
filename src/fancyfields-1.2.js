@@ -484,7 +484,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         // set dropdown for mobile - use only the dummy button
                         if (_ffIsMobile){
                             $wrapElement.append($dummyObject.append($dummyButton)).insertAfter($curObj.addClass("mobileSelect"));
-                            $dummyObject.append($curObj.css({"width" : $wrapElement.width() ,"height": $wrapElement.height() }));
+                            $dummyObject.append($curObj.css({"width" : $wrapElement.width() ,"height": $wrapElement.innerHeight() }));
                              $dummyButton.click(function () {
                                 $curObj.trigger("click");
                              });
