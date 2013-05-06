@@ -2,8 +2,8 @@
 
 Jquery plugin for custom form elements
 
-[demo](http://www.jqfancyfields.com/). 
+Check the [demo](http://www.jqfancyfields.com/)
 
-[How to use](http://www.jqfancyfields.com/how-to-use/). 
+See [How to use](http://www.jqfancyfields.com/how-to-use/) fancy fields
 
-[Examples & Docs](http://www.jqfancyfields.com/examples-docs/). 
+Explore [Examples & Docs](http://www.jqfancyfields.com/examples-docs/)
