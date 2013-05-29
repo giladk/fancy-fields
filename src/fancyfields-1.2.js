@@ -3,7 +3,7 @@
 * Fancy fields 1.2
 * URI: http://www.jqfancyfields.com
 *
-* Date: May 06 2013
+* Date: May 29 2013
 *
 * Copyrights 2012 Gilad Korati & Matan Gottlieb
 *
@@ -635,43 +635,49 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                 if (!curOpt.hasClass("selected") && !curOpt.hasClass("disabled")) {
                                     var $curVal = $("span", curOpt).data("val");
                                     var $curText = $("span", curOpt).text();
-                                    var curInd = $("LI", $menuElement).not(".ffGroup").index(curOpt);
-                                    $curObj.val($curVal);
-                                    var $curSpan = $("span", $dummyButton).prop("class","").text($curText);
-                                    if (curOpt.prop("class")){
-                                        $curSpan.prepend($("<i>").addClass(curOpt.prop("class")).removeClass("on").css("float",$curSpan.css("direction") == "rtl" ? "right" : "left"));
-                                    }
-                                    curOpt.siblings($("li")).removeClass("on");
-                                    curOpt.addClass("on");
-                                    curOpt.siblings($("li.selected")).removeClass("selected");
-                                    curOpt.addClass("selected");
-                                    $wrapElement.removeClass("active");
-                                    $("option:selected", $curObj).prop("selected",false);
-                                    $("option:eq(" + curInd + ")", $curObj).prop("selected", true);
 
-                                    $activeSelect = null;
-						    		
-						    		
-						    		if ($menuElementWrapper.is(":visible")){
-                                        if (!setOnTop){
-						    		        $menuElementWrapper.slideUp(300,function(){
-						    		        	$dummyObject.css("z-index",10);
-						    		        });
+                                    var validateSelection = settings["validateSelectChange"];
+                                    if ((typeof validateSelection !== 'function')||(validateSelection($curObj, $curText, $curVal)!==false)){
+                                        var curInd = $("LI", $menuElement).not(".ffGroup").index(curOpt);
+                                        $curObj.val($curVal);
+                                        var $curSpan = $("span", $dummyButton).prop("class","").text($curText);
+                                        if (curOpt.prop("class")){
+                                            $curSpan.prepend($("<i>").addClass(curOpt.prop("class")).removeClass("on").css("float",$curSpan.css("direction") == "rtl" ? "right" : "left"));
                                         }
-                                        else{
-                                            $menuElementWrapper.animate({height:0,top:0},300,function(){
-                                                $menuElementWrapper.hide(0);
-						    		        	$dummyObject.css("z-index",10);
-						    		        });
-                                        }
-						    		}
-                                    
-						    		if (!isCleanClick) {
-						    			var fn = settings["onSelectChange"];
-						    			if (typeof fn === 'function') {
-						    				fn($curObj, $curText, $curVal);
-						    			}
-						    		}
+                                        curOpt.siblings($("li")).removeClass("on");
+                                        curOpt.addClass("on");
+                                        curOpt.siblings($("li.selected")).removeClass("selected");
+                                        curOpt.addClass("selected");
+                                        $wrapElement.removeClass("active");
+                                        $("option:selected", $curObj).prop("selected",false);
+                                        $("option:eq(" + curInd + ")", $curObj).prop("selected", true);
+
+                                        $activeSelect = null;
+						    		    
+						    		    
+						    		    if ($menuElementWrapper.is(":visible")){
+                                            if (!setOnTop){
+						    		            $menuElementWrapper.slideUp(300,function(){
+						    		            	$dummyObject.css("z-index",10);
+						    		            });
+                                            }
+                                            else{
+                                                $menuElementWrapper.animate({height:0,top:0},300,function(){
+                                                    $menuElementWrapper.hide(0);
+						    		            	$dummyObject.css("z-index",10);
+						    		            });
+                                            }
+						    		    }
+                                        
+						    		    if (!isCleanClick) {
+						    		    	var fn = settings["onSelectChange"];
+						    		    	if (typeof fn === 'function') {
+						    		    		fn($curObj, $curText, $curVal);
+						    		    	}
+						    		    }
+                                    }else{
+                                        $dummyButton.click();  
+                                    }
                                 }
 						    	isCleanClick = false;
                                 return false;
