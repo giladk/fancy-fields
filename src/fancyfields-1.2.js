@@ -830,7 +830,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                     wrapper.toggleClass("disabled");
                 }
                 if ($this.is(":text") || $this.is("textarea") || $this.is(":password") || $this.is(":checkbox") || $this.is(":radio") || $this.is("select")) {
-                    if ($this.prop("disabled") == "disabled") {
+                    if (($this.prop("disabled") == "disabled")||($this.prop("disabled") == true)) {
                         $this.removeAttr("disabled");
                     }
                     else {
