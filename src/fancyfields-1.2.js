@@ -678,7 +678,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                     }else{
                                         $dummyButton.click();  
                                     }
-                                }else if(curOpt.hasClass("selected")){
+                                }else if(curOpt.hasClass("selected") && $menuElementWrapper.is(":visible")){
                                     $dummyButton.click();                                        
                                 }
 						    	isCleanClick = false;
