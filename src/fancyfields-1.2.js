@@ -678,6 +678,8 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                     }else{
                                         $dummyButton.click();  
                                     }
+                                }else if(curOpt.hasClass("selected")){
+                                    $dummyButton.click();                                        
                                 }
 						    	isCleanClick = false;
                                 return false;
