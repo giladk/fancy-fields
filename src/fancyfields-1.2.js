@@ -34,10 +34,10 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
     var currentTyping = "";
 
     var genneralSettings;
-	
+
     var methods = {
         init: function (options) {
-            
+
             if (firstInit) {
 
                 $(document).keydown(function (event) {
@@ -135,10 +135,10 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                 }
                             });
                         }
-                        
+
                         event.preventDefault();
                     }
-                }); 
+                });
 
                 $(document).click(function (event) {
 					if ($activeSelect != null) {
@@ -161,8 +161,8 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
             /* first init end */
             return this.each(function () {
                 var $curObj = $(this);
-				
-				
+
+
                 // check if is inpur or wrap element
                  if ((!$curObj.is("input")) && (!$curObj.is("textarea")) && (!$curObj.is("select"))) {
                     if ($curObj.is("FORM")) {
@@ -223,7 +223,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         $wrapElement = $('<div class="ffTextBoxWrapper' + objClass + '"></div>');
                         $wrapElement.insertAfter($curObj).append($('<div class="ffTextBoxRight"></div>').append($('<div class="ffTextBoxLeft"></div>').append($curObj)));
 
-                        // check for disabled 
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
                         $curObj.focusin(function () {
@@ -254,8 +254,8 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                     if ($curObj.is(":password")) {
                         $wrapElement = $('<div class="ffPasswordWrapper' + objClass + '"></div>');
                         $wrapElement.insertAfter($curObj).append($('<div class="ffPasswordRight"></div>').append($('<div class="ffPasswordLeft"></div>').append($curObj)));
-                        
-                        // check for disabled 
+
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
 
@@ -277,8 +277,8 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                     if ($curObj.is("textarea")) {
                         var $firstVal = $curObj.val();
                         $wrapElement = $('<div class="ffTextAreaWrapper' + objClass + '"></div>');
-						
-						
+
+
 						$wrapElement.append('<div class="ffTextAreaTop"><span></span></div>').insertAfter($curObj).append($('<div class="ffTextAreaMid"></div>').append($('<div class="ffTextAreaLeft"></div>').append($curObj))).append('<div class="ffTextAreaBottom"><span></span></div>');
 						 //fix ie7 width
                         if (navigator.appVersion.indexOf("MSIE 7.") != -1){
@@ -286,7 +286,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 							$(".ffTextAreaTop",$wrapElement).css("width" , objWidth );
                             $(".ffTextAreaBottom",$wrapElement).css("width" , objWidth );
                         }
-                        // check for disabled 
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
                         $curObj.focusin(function () {
@@ -323,7 +323,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                             $wrapElement.addClass("on");
                         }
 
-                        // check for disabled 
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
                         // check for label
@@ -403,7 +403,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         if ($curObj.is(":checked")) {
                             $wrapElement.addClass("on");
                         }
-                        // check for disabled 
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
                         // check for label
@@ -413,7 +413,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                             $labelElement = $('<a href="javascript:void(0)">' + labelObj.text() + '</a>');
                         }
                         else{
-                            
+
                         }
 
                         // insert element
@@ -478,7 +478,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         }
 
 
-                        // check for disabled 
+                        // check for disabled
                         checkDisabled($curObj, $wrapElement);
 
                         // set dropdown for mobile - use only the dummy button
@@ -499,15 +499,15 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 
                              });
                         }
-                        
+
                         else{
                             // setting elements for menu
-                            var $menuElementWrapper = $('<div class="ffSelectMenuWrapper"><div class="ffSelectMenuTop"><span></span></div></div>').css("position", "absolute") , 
+                            var $menuElementWrapper = $('<div class="ffSelectMenuWrapper"><div class="ffSelectMenuTop"><span></span></div></div>').css("position", "absolute") ,
 
                             $menuElement = $('<ul data-cts="'+settings.continueTypingSpees+'" data-ds="'+false+'">');
                             // for each option in select
                             var curOpt,optionsHtml = "" ,selectedFlag = false,liClass="",optionClass = "";
-                            $objOptions = $(">option,optgroup", $curObj);
+                            var $objOptions = $(">option,optgroup", $curObj);
                             $objOptions.each(function () {
                                 curOpt = $(this);
                                 if (curOpt.prop("tagName") == "OPTION"){
@@ -559,17 +559,17 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 
                             var $menuListWrapper = $('<div class="ffSelectMenuMid"></div>').css("overflow", "auto");
                             $menuElementWrapper.append($('<div class="ffSelectMenuMidBG"></div>').append($menuListWrapper.append($menuElement))).append('<div class="ffSelectMenuBottom"><span></span></div>');
-                           
+
                             $menuElementWrapper.css("display", "none");
 
                             $wrapElement.append($dummyObject.append($dummyButton).append($menuElementWrapper)).insertAfter($curObj.css("display", "none")).append($curObj);
 
                             var menuHeight = $menuElementWrapper.height();
-                            
+
                             var setOnTop = false;
 
                             var CheckHeight = $(document).height() > $("html").height() ? $(document).height() : $("html").height();
-                          
+
                             if ( CheckHeight < (parseInt($wrapElement.offset().top) + parseInt($wrapElement.height()) + menuHeight + 15)){
                                 setOnTop = true;
                                 $menuElementWrapper.height(0);
@@ -626,9 +626,9 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                             });
 
                             addFocusEvents($dummyButton, $wrapElement);
-						    
+
 						    var last_moved=0; // fix for chrome
-                            
+
                             // select menu option click
                             $menuElement.on("click","LI",function(){
                                 var curOpt = $(this);
@@ -653,8 +653,8 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                         $("option:eq(" + curInd + ")", $curObj).prop("selected", true);
 
                                         $activeSelect = null;
-						    		    
-						    		    
+
+
 						    		    if ($menuElementWrapper.is(":visible")){
                                             if (!setOnTop){
 						    		            $menuElementWrapper.slideUp(300,function(){
@@ -668,7 +668,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 						    		            });
                                             }
 						    		    }
-                                        
+
 						    		    if (!isCleanClick) {
 						    		    	var fn = settings["onSelectChange"];
 						    		    	if (typeof fn === 'function') {
@@ -676,23 +676,23 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 						    		    	}
 						    		    }
                                     }else{
-                                        $dummyButton.click();  
+                                        $dummyButton.click();
                                     }
                                 }else if(curOpt.hasClass("selected") && $menuElementWrapper.is(":visible")){
-                                    $dummyButton.click();                                        
+                                    $dummyButton.click();
                                 }
 						    	isCleanClick = false;
                                 return false;
                             }).on("mousemove","LI",function(e){ //.mousemove(function (e) {
                                 //fix chrome mouse move when scrolling by arrows
-						    	if ((_mouseX!=e.pageX) || (_mouseY!=e.pageY)) {                            
+						    	if ((_mouseX!=e.pageX) || (_mouseY!=e.pageY)) {
 						    		$(".on", $menuElement).removeClass("on")
 						    		$(this).addClass("on");
 						    		_mouseX = e.pageX;
 						    		_mouseY = e.pageY;
 						    	}
                             });
-						    
+
 						    if ($.fn.ffCustomScroll && settings.customScrollBar){
 						    	$wrapElement.ffCustomScroll();
 						    }
@@ -732,7 +732,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 
                         checkDisabled($curObj, $wrapElement);
                         addFocusEvents($dummyButton, $wrapElement);
-						
+
                         $dummyButton.click(function () {
                             if (!$wrapElement.hasClass("disabled")){
                                 $curObj.click();
@@ -768,7 +768,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                     $curObj.data('wrapper', $wrapElement);
                 }
             });
-            
+
 
         },
         option: function (optName, val) {
@@ -860,13 +860,13 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                 $this.removeAttr("disabled");
                             }
                         }
-						
+
 						// if clean disable on clear
 						if (($this.prop("disabled") != "disabled") || (settings.cleanDisableOnClean)) {
 							// clean value
 							if ($this.is(":checkbox") || $this.is(":radio")) {
                                 if (!$this.is(":checked")){
-                                    invokeChange = false; 
+                                    invokeChange = false;
                                 }
 								$this.removeAttr("checked");
 								wrapper.removeClass("on");
@@ -891,7 +891,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
 							}
 						}
 
-                        
+
                     }
                 }
             });
@@ -901,7 +901,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                 var $this = $(this);
                 if ((!$this.is(":reset")) && (!$this.is(":button")) && (!$this.is(":submit")) && (!$this.is("input[type=hidden]"))) {
                     if ((!$this.is("input")) && (!$this.is("textarea")) && (!$this.is("select"))) {
-						
+
                         $("INPUT,SELECT,TEXTAREA", $this).fancyfields("reset");
                     }
                     else {
