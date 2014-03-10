@@ -344,10 +344,10 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         // dummy object click
                         $dummyObject.click(function () {
                             if (!$wrapElement.hasClass("disabled")) {
-                                $curField = $(this);
-                                $curInput = $curField.siblings("input");
+                                var $curField = $(this),
+                                    $curInput = $curField.siblings("input"),
+                                    $isCheckd = false;
                                 $wrapElement.toggleClass("on");
-                                var $isCheckd = false;
                                 if (!isTrigger) {
                                     if ($curInput.is(":checked")) {
                                         $curInput.prop("checked", false);
