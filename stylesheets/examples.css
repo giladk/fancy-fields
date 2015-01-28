@@ -1,0 +1,43 @@
+﻿btnExm{float:left;}
+.codeP{float:left;margin-right:15px;}
+.copyCode{float:right;cursor:pointer;}
+.codeWrapper{border:1px solid gray;font: 12px/18px arial;padding: 5px;}
+.codeWrapper H4{margin-bottom:5px;}
+
+
+.ffCeckboxWrapper,.ffRadioWrapper{clear:none;margin-right:20px;}
+
+/*.ffButtonWrapper A{text-decoration:none!important;}
+
+.ffCeckboxWrapper {margin-right:20px;}
+.ffCeckboxWrapper A{text-decoration:none!important;}
+
+.ffRadioWrapper{float:left;margin-right:20px;}
+.ffRadioWrapper A{text-decoration:none!important;}
+
+.ffSelectWrapper LI{margin:0!important;}
+.ffSelectWrapper A{text-decoration:none!important;}
+
+.ffTextBoxWrapper input{width:200px;}
+.ffTextAreaWrapper textarea{width:210px;}
+.ffPasswordWrapper input{width:200px;}*/
+
+.tabsContainer{margin:10px 0;}
+.tabsContainer .tabsMenu{border-top: 1px solid #539530;}
+.tabsContainer .tabsMenu ul{margin:0px;padding-left: 0;}
+.tabsContainer .tabsMenu ul li{float:left;margin:0;border-right:1px solid #539530;list-style-type:none;}
+.tabsContainer .tabsMenu ul li.last{border-right:0px;}
+.tabsContainer .tabsMenu ul li A{padding:5px 10px; font-size:14px; display:block;text-decoration:none;color: #525252;}
+.tabsContainer .tabsMenu ul li.selected{background-color:#E3E3E3;}
+.tabsContainer .tabsMenu ul li.selected A{color:black;}
+
+.tabsContainer .tabsContent{border-top:1px solid #539530;border-bottom:1px solid #539530;padding:10px 10px;}
+.tabsContainer .tabsContent .codeP{width: 540px;}
+
+
+.exampleContainer form > ul 
+{
+    margin-left: 30px;
+}
+
+.exampleContainer h2 a{color:#000}
